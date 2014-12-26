@@ -43,14 +43,23 @@
 	<![endif]-->
 </head>
 
-<body class="ng-cloak">
-	<header data-ng-include="'/modules/core/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
-	<section class="content">
-		<section class="container">
-			{% block content %}{% endblock %}
-		</section>
-	</section>
-
+<body class="ng-cloak" ng-controller="CoreController">
+	<div class="container wrapper" ng-class="navigation.navState">
+		<div class="container left" ng-controller="LeftController" ng-include="'/modules/core/views/left.client.view.html'">
+		</div>
+		<div class="container middle">
+			<div class="header">
+				<a ng-click="navigation.slideRight()" class="icon-search left-menu-opener"></a>
+				<a class="logo" href="#!/">Chatter</a>
+				<a ng-click="navigation.slideLeft()" class="icon-content-44 right-menu-opener"></a>
+			</div>
+			<div class="content" data-ui-view>
+			</div>
+			<div class="overlay" ng-click="navigation.slideMiddle()" ng-if="navigation.navState !== 'slide-middle'"></div>
+		</div>
+		<div class="container right" ng-controller="RightController" ng-include="'/modules/core/views/right.client.view.html'">
+		</div>
+	</div>
 	<!--Embedding The User Object-->
 	<script type="text/javascript">
 		var user = {{ user | json | safe }};

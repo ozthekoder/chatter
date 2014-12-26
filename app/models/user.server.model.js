@@ -59,6 +59,13 @@ var UserSchema = new Schema({
 		default: '',
 		validate: [validateLocalStrategyPassword, 'Password should be longer']
 	},
+	avatar : {
+		type: String
+	},
+	friends: [{
+			type: Schema.ObjectId,
+			ref: 'User'
+	}],
 	salt: {
 		type: String
 	},

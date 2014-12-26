@@ -1,0 +1,16 @@
+$header-height : 50px;
+$menu-width : 300px;
+
+$color-primary-0 : #FFDBAA;
+$color-primary-1 : #D4A76A;
+$color-primary-2 : #AA7939;
+$color-primary-3 : #805215;
+$color-primary-4 : #553100;
+
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
