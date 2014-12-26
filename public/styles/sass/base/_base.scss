@@ -6,6 +6,11 @@ $color-primary-1 : #D4A76A;
 $color-primary-2 : #AA7939;
 $color-primary-3 : #805215;
 $color-primary-4 : #553100;
+$facebook-color: #3b5998;
+$twitter-color: #00aced;
+$google-plus--color: #dd4b39;
+$linkedin-color: #007bb6;
+$github-color: #000;
 
 @mixin transition($transition-property, $transition-time, $method) {
   -webkit-transition: $transition-property $transition-time $method;
